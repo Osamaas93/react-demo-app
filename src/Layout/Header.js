@@ -31,7 +31,7 @@ const StyledNav = styled.nav`
   gap: 4px;
 `;
 
-export default function Header({ theme, toggleTheme }) {
+export default function Header({ theme, setTheme }) {
   const { toggleIsFavOpen } = useFavourites();
 
   return (
@@ -41,7 +41,11 @@ export default function Header({ theme, toggleTheme }) {
           <HeaderTitle to="/">Web Topics</HeaderTitle>
           <StyledNav>
             <Button
-              onClick={toggleTheme}
+              onClick={() =>
+                setTheme((curr) =>
+                  curr === "lightTheme" ? "darkTheme" : "lightTheme"
+                )
+              }
               icon={theme === "darkTheme" ? "sunny-outline" : "moon-outline"}
             >
               {theme === "darkTheme" ? "Light Mode " : "Dark Mode"}

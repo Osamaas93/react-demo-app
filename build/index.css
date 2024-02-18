@@ -5,27 +5,28 @@
     margin: 0;
 }
 
+  .lightTheme { --brandPrimary: #0768AC;
+    --brandSecondary: #03C180;
+    --bgDefault: #FFFFFF;
+    --bgBody: #F0F9FF;
+    --linesColor: #DDDDDD;
+    --bodyText: #333333;
+    --heartColor: #DC143C;
+    background-color: var(--bgBody);
+  }
 
- #lightTheme{
+.darkTheme {
   --brandPrimary: #0768AC;
   --brandSecondary: #03C180;
-  --bgDefault: #FFFFFF;
-  --bgBody: #F0F9FF;
-  --linesColor: #DDDDDD;
-  --bodyText: #333333;
+  --bgDefault: #1A1A1A;
+  --bgBody: #282828;
+  --linesColor: #000000;
+  --bodyText: #EDEDED;
   --heartColor: #DC143C;
+  background-color: var(--bgBody);
 }
  
 
-#darkTheme {
-    --brandPrimary: #0768AC;
-    --brandSecondary: #03C180;
-    --bgDefault: #1A1A1A;
-    --bgBody: #282828;
-    --linesColor: #000000;
-    --bodyText: #EDEDED;
-    --heartColor: #DC143C;
-  } 
 
 
   h1, h2,h3 , h4, h5, h6 {

@@ -3,10 +3,11 @@ import { Container } from "../../Layout/Container";
 import TopicCard from "../../components/TopicCard";
 import SearchBar from "./SearchBar";
 import TopicsList from "./TopicsList";
-import { fetchTopics } from "../../components/Api";
+/* import { fetchTopics } from "../../components/Api"; */
 import { filterTopics } from "./Filter";
 import { sortTopics } from "./Sort";
 import TopicsCounter from "./TopicsCounter";
+import axios from "axios";
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
@@ -24,12 +25,12 @@ export default function HomePage() {
     if (search) {
       searchParams.append("phrase", search);
     }
-
+    const baseURL = `https://tap-web-1.herokuapp.com/topics/list?${searchParams}`;
     setLoading(true);
-
-    fetchTopics(searchParams)
-      .then((result) => {
-        setTopics(result);
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setTopics(response.data);
       })
       .finally(() => {
         setLoading(false);

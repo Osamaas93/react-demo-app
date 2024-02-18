@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
-
+console.log("Favourites");
 const FavouritesContext = createContext(null);
 
 export default function FavouritesProvider({ children }) {
