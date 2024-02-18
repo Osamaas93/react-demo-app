@@ -59,7 +59,10 @@ export default function TopicCard({
   return (
     <StyledCard to={`/details/${id}`}>
       <CardContent>
-        <CardImage src={"./assets/images/" + image} alt={topic} />
+        <CardImage
+          src={`${process.env.PUBLIC_URL}/assets/images/${image}`}
+          alt={topic}
+        />
         <CardBody>
           <CardCategory>
             <TrimmedText maxLines={1}>{category}</TrimmedText>

@@ -7,7 +7,7 @@ import FavouritesProvider from "./contexts/FavouritesContext";
 function App() {
   return (
     <FavouritesProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/react-demo-app">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
